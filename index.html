@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./image/favicon.png" />
+    <title>MPLS SMANSAS 2025</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f0f23 0%,
+          #1a1a2e 50%,
+          #16213e 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .post-container {
+        background: linear-gradient(145deg, #1e1e2e 0%, #2a2a3a 100%);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .post-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        letter-spacing: 1px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+
+      .emoji-decoration {
+        font-size: 20px;
+        margin: 0 5px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: 700;
+        color: #4facfe;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .intro-text {
+        background: rgba(79, 172, 254, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #4facfe;
+
+        color: #e0e0e0;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .main-content {
+        background: rgba(79, 172, 254, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #4facfe;
+      }
+
+      .ready-text {
+        color: #ffffff;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+      }
+
+      .school-name {
+        font-weight: 800;
+        color: #4facfe;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .mpls-text {
+        font-weight: 700;
+        color: #00f2fe;
+      }
+
+      .year-highlight {
+        color: #4facfe;
+        font-weight: 700;
+        border-bottom: 2px solid #4facfe;
+        padding-bottom: 2px;
+      }
+
+      .quote-section {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 25px 0;
+        border-left: 3px solid #00f2fe;
+      }
+
+      .quote {
+        color: #ffffff;
+        font-style: italic;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .quote-author {
+        color: #4facfe;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      .divider {
+        text-align: center;
+        color: #ffffff;
+        margin: 20px 0;
+        padding: 0 3rem;
+        font-size: 14px;
+      }
+
+      .contact-info {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 18px;
+        margin: 20px 0;
+      }
+
+      .contact-title {
+        color: #4facfe;
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .contact-details {
+        color: #e0e0e0;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .hashtags {
+        color: #4facfe;
+        font-weight: 600;
+      }
+
+      .twibbonize-section {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 172, 254, 0.1),
+          rgba(0, 242, 254, 0.1)
+        );
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 20px;
+        border: 1px solid rgba(79, 172, 254, 0.3);
+      }
+
+      .twibbon-text {
+        color: #e0e0e0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .twibbon-link {
+        color: #4facfe;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .twibbon-link:hover {
+        color: #00f2fe;
+        text-decoration: underline;
+      }
+
+      .mention-text {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .timestamp {
+        text-align: right;
+        color: #666;
+        font-size: 12px;
+        margin-top: 20px;
+      }
+
+      .glow-effect {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 5px #4facfe, 0 0 10px #4facfe, 0 0 15px #4facfe;
+        }
+        to {
+          text-shadow: 0 0 10px #4facfe, 0 0 20px #4facfe, 0 0 30px #4facfe;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .post-container {
+          padding: 20px;
+          margin: 10px;
+        }
+
+        .title {
+          font-size: 14px;
+        }
+
+        .greeting {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="post-container">
+      <div class="header">
+        <img
+          src="./image/logo.png"
+          alt="img"
+          width="100"
+          height="100"
+          style="margin: 0 0 1.5rem 0"
+        />
+        <div class="title glow-effect">
+          ✦ 𝐒𝐌𝐀𝐍 𝟏 𝐀𝐁𝐔𝐍𝐆 𝐒𝐄𝐌𝐔𝐋𝐈 𝐑𝐞𝐚𝐝𝐲 𝐅𝐨𝐫 𝐌𝐏𝐋𝐒 𝟐𝟎𝟐𝟓 <br />
+          <span class="emoji-decoration">📚✨</span>
+        </div>
+      </div>
+
+      <div class="greeting">
+        ᯓ 𝗛𝗶, 𝗦𝗼𝗯𝗮𝘁 𝗦𝗺𝗮𝗻𝘀𝗮𝘀 !
+        <span class="emoji-decoration">🙌🏻🎉</span>
+      </div>
+
+      <div class="intro-text">
+        — Perkenalkan saya [nama siswa] asal sekolah [nama SMP/MTS]. <br />
+      </div>
+
+      <div class="main-content">
+        <div class="ready-text">
+          I'm ready to be part of the big family of
+          <span class="school-name">𝐒𝐦𝐚 𝐍𝐞𝐠𝐞𝐫𝐢 𝟏 𝐀𝐛𝐮𝐧𝐠 𝐒𝐞𝐦𝐮𝐥𝐢</span> ! 🙋🏻‍♀️🙋🏻 dan
+          siap mengikuti rangkaian kegiatan
+          <span class="mpls-text"
+            >𝗠𝗮𝘀𝗮 𝗣𝗲𝗻𝗴𝗲𝗻𝗮𝗹𝗮𝗻 𝗟𝗶𝗻𝗴𝗸𝘂𝗻𝗴𝗮𝗻 𝗦𝗲𝗸𝗼𝗹𝗮𝗵 𝗦𝗠𝗔𝗡𝗦𝗔𝗦</span
+          >
+          tahun ajaran <span class="year-highlight">2025/2026</span>.
+        </div>
+      </div>
+
+      <div class="divider">
+        <span style="font-size: 12px"
+          >Gunakan Caption diatas untuk Twibbon Kamu👆🏻</span
+        ><br />╰(*°▽°*)╯🩵
+      </div>
+
+      <div class="quote-section">
+        <div class="quote">
+          “ 𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐌𝐨𝐬𝐭 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐖𝐞𝐚𝐩𝐨𝐧 𝐭𝐨 𝐂𝐡𝐚𝐧𝐠𝐞 𝐭𝐡𝐞 𝐖𝐨𝐫𝐥𝐝. ”
+        </div>
+        <div class="quote-author">— 𝐍𝐞𝐥𝐬𝐨𝐧 𝐌𝐚𝐧𝐝𝐞𝐥𝐚</div>
+      </div>
+
+      <div class="divider">(～￣▽￣)～</div>
+
+      <div class="contact-info">
+        <div class="contact-title">
+          <span class="emoji-decoration">📱</span> For more information
+        </div>
+        <p style="color: white; font-size: 12px">Instagram :</p>
+        <div class="contact-details">
+          @sman1abungsemuli<br />
+          @osissmansaabungsemuli<br />
+          <span class="hashtags"
+            >#MasaPengenalanLingkunganSekolah #MPLSSMANSAS2025 #OSISSMANSAS
+            #WelcomeNewStudents</span
+          >
+        </div>
+      </div>
+
+      <div class="twibbonize-section">
+        <div class="mention-text">(Mention 3 atau lebih temanmu)</div>
+        <div class="twibbon-text">
+          <h4 style="color: rgb(0, 255, 0); font-family: Poppins, sans-serif">
+            ❗Dapatkan bingkai Twibbonize ini melalui ↴
+          </h4>
+          ↪
+          <a
+            href="https://www.twibbonize.com/mplssman1absem2025/support"
+            class="twibbon-link"
+            target="_blank"
+            ><u>twibbon/mplssmansas2025</u></a
+          >
+          👈🏻🚀<br />
+          Tag : @osissmansaabungsemuli @sman1abungsemuli <br /><br />
+          <b>✨Twibbon Sample ↴</b><br />
+          ↪
+          <a
+            href="https://www.instagram.com/p/DLi9lIvSCCHxzfXvfBBkxTQNcG3NuvMDZWXK7c0/"
+            class="twibbon-link"
+            target="_blank"
+            ><u>sampletwibbon</u></a
+          ><br />
+          <span class="hashtags">#twibbonize #MPLS2025</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
