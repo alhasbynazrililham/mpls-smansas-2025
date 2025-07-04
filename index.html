@@ -12,10 +12,10 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       body {
-        font-family: "Inter", sans-serif;
         background: linear-gradient(
           135deg,
           #0f0f23 0%,
@@ -24,9 +24,9 @@
         );
         min-height: 100vh;
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding: 20px;
+        justify-content: center;
+        position: relative;
       }
 
       .img-main {
@@ -44,7 +44,8 @@
         max-width: 500px;
         width: 100%;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 20px;
         position: relative;
         overflow: hidden;
       }
@@ -66,7 +67,7 @@
 
       .title {
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 700;
         color: #ffffff;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         letter-spacing: 1px;
@@ -80,7 +81,7 @@
       }
 
       .greeting {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 700;
         color: #4facfe;
         margin-bottom: 8px;
@@ -88,36 +89,39 @@
         align-items: center;
       }
 
+      .content-container {
+        position: relative;
+        border-bottom: 2px solid #4facfe;
+        border-top: 2px solid #4facfe;
+      }
+
       .main-content {
-        background: rgba(79, 172, 254, 0.1);
-        border-radius: 15px;
-        padding: 20px;
+        padding: 10px 0;
         margin: 20px 0;
-        border-left: 4px solid #4facfe;
       }
 
       .ready-text {
         color: #ffffff;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 1.7;
         margin-bottom: 15px;
       }
 
       .school-name {
-        font-weight: 800;
+        font-weight: 600;
         color: #4facfe;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       .mpls-text {
-        font-weight: 700;
+        font-weight: 500;
         color: #00f2fe;
       }
 
       .year-highlight {
         color: #4facfe;
-        font-weight: 700;
-        border-bottom: 2px solid #4facfe;
+        font-weight: 600;
+        border-bottom: 1px solid #4facfe;
         padding-bottom: 2px;
       }
 
@@ -138,6 +142,7 @@
       }
 
       .quote-author {
+        font-size: 14px;
         color: #4facfe;
         font-weight: 600;
         text-align: right;
@@ -220,10 +225,76 @@
         margin-top: 20px;
       }
 
+      .glow-title {
+        text-shadow: 0 0 10px #4facfe4d;
+      }
+
+      .ii {
+        font-size: 12px;
+        color: #a8a8a8;
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        border: none;
+        border-radius: 10px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 20;
+        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+      }
+
+      .copy-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+      }
+
+      .copy-button:active {
+        transform: scale(0.95);
+      }
+
+      .copy-button svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+      }
+
+      .copy-notification {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        background: #4facfe;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 25;
+      }
+
+      .copy-notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h4.i {
+        color: #0bea0b;
+      }
+
       @media (max-width: 480px) {
         .post-container {
           padding: 20px;
-          margin: 10px;
         }
 
         .title {
@@ -231,15 +302,48 @@
         }
 
         .greeting {
-          font-size: 16px;
+          font-size: 14px;
         }
 
-        .ready-text {
-          font-size: 14px;
+        .quote {
+          font-size: 13px;
+        }
+
+        .quote-author {
+          font-size: 11px;
         }
 
         .hashtags {
           font-size: 12px;
+        }
+
+        .twibbon-link {
+          font-size: 12px;
+        }
+
+        .i {
+          font-size: 80%;
+        }
+        .ii {
+          font-size: 9px;
+        }
+        h4.i {
+          color: #0bea0b;
+          font-size: 12px;
+        }
+        .ready-text {
+          font-size: 12px;
+        }
+        .tag-caption {
+          font-size: 11px;
+        }
+        .copy-button {
+          width: 30px;
+          height: 30px;
+        }
+
+        .copy-button svg {
+          width: 16px;
         }
       }
     </style>
@@ -255,34 +359,50 @@
           height="100"
           style="margin: 0 0 1.5rem 0"
         />
-        <div class="title">
-          ✦ 𝐒𝐌𝐀𝐍 𝟏 𝐀𝐁𝐔𝐍𝐆 𝐒𝐄𝐌𝐔𝐋𝐈 𝐑𝐞𝐚𝐝𝐲 𝐅𝐨𝐫 𝐌𝐏𝐋𝐒 𝟐𝟎𝟐𝟓 <br />
+        <div class="title glow-title">
+          ✦ SMAN 𝟏 𝐀𝐁𝐔𝐍𝐆 𝐒𝐄𝐌𝐔𝐋𝐈 𝐑𝐞𝐚𝐝𝐲 𝐅𝐨𝐫 𝐌𝐏𝐋𝐒 𝟐𝟎𝟐𝟓 ✦<br />
           <span class="emoji-decoration">📚✨</span>
         </div>
       </div>
 
-      <div class="main-content">
-        <div class="greeting">
-          ᯓ 𝗛𝗶, 𝗦𝗼𝗯𝗮𝘁 𝗦𝗺𝗮𝗻𝘀𝗮𝘀 !
-          <span class="emoji-decoration">🙌🏻</span>
+      <div class="content-container" id="contentContainer">
+        <button class="copy-button" onclick="copyContent()" title="Salin teks">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+            />
+          </svg>
+        </button>
+
+        <div class="copy-notification" id="copyNotification">
+          Teks berhasil disalin!
         </div>
 
-        <div class="ready-text">
-          Perkenalkan saya [nama siswa], asal sekolah [nama SMP/MTS].
-          <br /><br />
-          I'm ready to be part of the big family of
-          <span class="school-name">𝐒𝐦𝐚 𝐍𝐞𝐠𝐞𝐫𝐢 𝟏 𝐀𝐛𝐮𝐧𝐠 𝐒𝐞𝐦𝐮𝐥𝐢</span> ! 🙋🏻‍♀️🙋🏻 dan
-          siap mengikuti rangkaian kegiatan
-          <span class="mpls-text"
-            >𝗠𝗮𝘀𝗮 𝗣𝗲𝗻𝗴𝗲𝗻𝗮𝗹𝗮𝗻 𝗟𝗶𝗻𝗴𝗸𝘂𝗻𝗴𝗮𝗻 𝗦𝗲𝗸𝗼𝗹𝗮𝗵 𝗦𝗠𝗔𝗡𝗦𝗔𝗦</span
-          >
-          tahun ajaran <span class="year-highlight">2025/2026</span>.
-          <br /><br />
+        <div class="main-content" id="mainContent">
+          <div class="greeting">
+            ᯓ 𝗛𝗶, 𝗦𝗼𝗯𝗮𝘁 𝗦𝗺𝗮𝗻𝘀𝗮𝘀 !
+            <span class="emoji-decoration">🙌🏻🎉</span>
+          </div>
 
-          <div class="tag-caption">
-            <span>@sman1abungsemuli</span> <br />
-            <span>@osissmansaabungsemuli</span> <br />
-            <span>#masapengenalanlingkungansekolah</span> <br />
+          <div class="ready-text">
+            Perkenalkan saya [ <i>Nama Lengkap</i> ], asal sekolah [
+            <i>nama SMP/MTS</i> ]. <br /><br />
+            I'm ready to be part of the big family of
+            <span class="school-name glow-title">𝐒𝐌𝐀𝐍 𝟏 𝐀𝐛𝐮𝐧𝐠 𝐒𝐞𝐦𝐮𝐥𝐢</span>
+            ! 🙋🏻‍♀️🙋🏻 dan siap mengikuti seluruh rangkaian kegiatan
+            <span class="mpls-text"
+              >Masa Pengenalan Lingkungan Sekolah SMANSAS</span
+            >
+            tahun ajaran <span class="year-highlight">2025/2026</span>.
+            <br /><br />
+
+            <div class="tag-caption">
+              <span>@sman1abungsemuli</span> <br />
+              <span>@osissmansaabungsemuli</span> <br />
+              <span>#masapengenalanlingkungansekolah</span><br />
+              <span>#mplssman1absem2025</span>
+              <br />
+            </div>
           </div>
         </div>
       </div>
@@ -320,35 +440,43 @@
       <div class="twibbonize-section">
         <div class="mention-text">(Mention 3 atau lebih temanmu)</div>
         <div class="twibbon-text">
-          <h4
-            style="
-              color: rgb(0, 255, 0);
-              font-family: Poppins, sans-serif;
-              font-size: 12px;
-            "
-          >
-            ❗Dapatkan bingkai Twibbonize melalui 🚀👇🏻 ↴
-          </h4>
+          <h4 class="i">Dapatkan bingkai Twibbonize melalui 🚀👇🏻</h4>
+          ↪
+          <div style="display: flex; align-items: center; gap: 5px">
+            <a
+              href="https://twibbo.nz/mplssmam1absem2025"
+              class="twibbon-link"
+              target="_blank"
+              ><u>/twibbon/mpls-smansas-2025</u></a
+            >
+            <p style="font-size: 12px">(size 4:5)</p>
+          </div>
+          <br />
+          <p class="i"><b>✨Contoh Twibbon ↴</b></p>
           ↪
           <a
-            href="https://twibbo.nz/mplssmam1absem2025"
+            href="https://www.instagram.com/p/DLrHOrgxnEt/?utm_source=ig_web_copy_link&igsh=cWVvZnJvNHJzYTRx"
             class="twibbon-link"
             target="_blank"
-            ><u>twibbon/mplssmansas2025</u></a
-          >
-          <br /><br />
-          <b style="font-size: 13px">✨Contoh Twibbon ↴</b><br />
-          ↪
-          <a
-            href="https://www.instagram.com/p/DLi9lIvSCCHxzfXvfBBkxTQNcG3NuvMDZWXK7c0/"
-            class="twibbon-link"
-            target="_blank"
-            ><u>contohtwibbon</u></a
+            ><u>/contoh-twibbon</u></a
           ><br />
           <br />
+          <div style="display: flex; align-items: center" class="i">
+            <b style="color: #ff9090">Khusus Panitia MPLS❗</b>
+            <p class="ii">(with password)</p>
+          </div>
+          ↪
+          <a
+            href="./panitia/password_protection.html"
+            target="_blank"
+            class="twibbon-link"
+            >/bagi-panitia-osis</a
+          ><br /><br />
           <span class="hashtags">#twibbonize #MPLS2025</span>
         </div>
       </div>
     </div>
+
+    <script src="/main.js"></script>
   </body>
 </html>
