@@ -1,5 +1,5 @@
 // Konfigurasi password - ubah sesuai kebutuhan
-const CORRECT_PASSWORD = "smansa123";
+const CORRECT_PASSWORD = "smansas123";
 
 // Elemen DOM
 const loginContainer = document.getElementById("loginContainer");
