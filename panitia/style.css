@@ -1,0 +1,393 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  background: linear-gradient(145deg, #1e1e2e 0%, #2a2a3a 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.lock-icon {
+  font-size: 48px;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.password-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+}
+
+.password-input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: white;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #667eea;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px #4facfe4d;
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-message {
+  color: #27ae60;
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.success-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.protected-content {
+  display: none;
+  background: linear-gradient(145deg, #1e1e2e 0%, #2a2a3a 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.protected-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.main-content {
+  color: #fff;
+  text-align: justify;
+}
+
+.greeting {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4facfe;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.ready-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.school-name {
+  font-weight: 600;
+  color: #4facfe;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mpls-text {
+  font-weight: 600;
+  color: #00f2fe;
+}
+
+.glow-title {
+  text-shadow: 0 0 10px #4facfe;
+}
+
+.year-highlight {
+  color: #4facfe;
+  font-weight: 600;
+  border-bottom: 1px solid #4facfe;
+  padding-bottom: 2px;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 480px) {
+  .container,
+  .protected-content {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .lock-icon {
+    font-size: 36px;
+  }
+}
+
+/* SALIN */
+.copy-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.copy-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+.copy-button svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.copy-notification {
+  position: absolute;
+  top: 75px;
+  right: 20px;
+  background: #4facfe;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 25;
+}
+
+.copy-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.twibbonize-section {
+  background: linear-gradient(
+    135deg,
+    rgba(79, 172, 254, 0.1),
+    rgba(0, 242, 254, 0.1)
+  );
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.twibbon-text {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.twibbon-link {
+  color: #4facfe;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.twibbon-link:hover {
+  color: #00f2fe;
+  text-decoration: underline;
+}
+
+.hashtags {
+  color: #4facfe;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 14px;
+  }
+
+  .greeting {
+    font-size: 16px;
+  }
+
+  .ready-text {
+    font-size: 14px;
+  }
+
+  .hashtags {
+    font-size: 12px;
+  }
+
+  a {
+    font-size: 12px;
+  }
+
+  .copy-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .copy-button svg {
+    width: 16px;
+  }
+}
